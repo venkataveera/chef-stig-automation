@@ -1,0 +1,1 @@
+# chef-stig-automation
