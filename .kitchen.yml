@@ -1,0 +1,41 @@
+driver:
+  name: ec2
+  region: us-east-1
+  availability_zone: f
+  subnet_id: subnet-your-subnet-id
+  security_group_ids: ["sg-your-sg1"]
+  aws_ssh_key_id: your-ssh-key
+  iam_profile_name: your-iam-role
+  instance_type: t2.micro
+  image_id: ami-your-ami-id
+  user_data: .user_data_windows.ps1
+  require_chef_omnibus: true
+  associate_public_ip: true
+  retryable_tries: 120
+  tags:
+    Name: ec2-kitchen-windows-vm
+    Owner: VeeVee
+    Environment: AWS 
+    Project: Windows 2012 STIG
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+transport:  
+  ssh_key: ~/.ssh/your.pem
+
+platforms:
+  - name: windows-2012r2
+    transport:
+      user: Administrator
+      name: winrm
+      password: 'password@123' 
+
+suites:
+  - name: default
+    run_list:
+      - recipe[Windows_2012_MS_STIG::security_policies]
+    attributes:

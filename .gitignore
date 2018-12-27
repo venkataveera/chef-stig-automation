@@ -1,0 +1,42 @@
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+
+# OS generated files
+.DS_Store
+Icon?
+nohup.out
+ehthumbs.db
+Thumbs.db
+
+# Bundler
+bin/*
+.bundle/*
+
+# test kitchen
+.kitchen/
+.kitchen.local.yml
+.idea
+# Chef
+.zero-knife.rb
+### Packer template
+# Cache objects
+packer_cache/
+
+# For built boxes
+*.box
+### ChefCookbook template
+.vagrant
+/cookbooks
+
+# Bundler
+bin/*
+.bundle/*
+
+.kitchen/
+.kitchen.local.yml
+

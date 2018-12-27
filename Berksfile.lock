@@ -1,0 +1,7 @@
+DEPENDENCIES
+  Windows_2012_MS_STIG
+    path: .
+    metadata: true
+
+GRAPH
+  Windows_2012_MS_STIG (0.2.0)

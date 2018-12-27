@@ -1,0 +1,20 @@
+[Unicode]
+Unicode=yes
+
+[Version]
+signature="$CHICAGO$"
+Revision=1
+
+[System Access]
+<% node['Windows_2012_MS_STIG']['system_access'].each do |setting, value| %>
+    <% unless value.nil? -%>
+<%= setting %> = <%= value %>
+    <% end %>
+<% end %>
+
+[Privilege Rights]
+<% node['Windows_2012_MS_STIG']['privilege_rights'].each do |setting, value| %>
+    <% unless value.nil? -%>
+<%= setting %> = <%= value %>
+    <% end %>
+<% end %>

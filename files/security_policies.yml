@@ -1,0 +1,238 @@
+---
+WN12-AC-000002:
+  name: Account lockout threshold
+  policy: LockoutBadCount
+  value: 3
+  cmp: gt
+  type: system_access
+  exclude_zero: true 
+WN12-AC-000003:
+  name: Reset account lockout counter after
+  policy: ResetLockoutCount
+  value: 15
+  cmp: eq
+  type: system_access   
+WN12-AC-000004:
+  name: Enforce password history
+  policy: PasswordHistorySize
+  value: 24
+  cmp: eq 
+  type: system_access
+WN12-AC-000005:
+  name: Maximum password age
+  policy: MaximumPasswordAge
+  value: 60
+  cmp: gt 
+  type: system_access
+WN12-AC-000006:
+  name: Minimum password age
+  policy: MinimumPasswordAge
+  value: 1
+  cmp: eq 
+  type: system_access 
+WN12-AC-000007:
+  name: Minimum password length
+  policy: MinimumPasswordLength
+  value: 14
+  cmp: lt 
+  type: system_access
+WN12-AC-000009:
+  name: Store password using reversible encryption
+  policy: ClearTextPassword
+  value: 0
+  cmp: eq 
+  type: system_access
+WN12-SO-000003:
+  name: Accounts - Guest account status
+  policy: EnableGuestAccount
+  value: 0
+  cmp: eq 
+  type: system_access
+WN12-SO-000005:
+  name: Accounts - Rename administrator account
+  policy: NewAdministratorName
+  value: Administrator
+  cmp: eq_str 
+  type: system_access  
+WN12-SO-000006:
+  name: Accounts - Rename guest account
+  policy: NewGuestName
+  value: Guest
+  cmp: eq_str 
+  type: system_access    
+WN12-SO-000066:
+  name: Network security - Force logoff when logon hours expire
+  policy: ForceLogoffWhenHourExpire
+  value: 1
+  cmp: eq 
+  type: system_access
+WN12-UR-000001:
+  name: Access Credential Manager as a trusted caller
+  policy: SeTrustedCredManAccessPrivilege
+  value: ''
+  type: privilege_rights  
+WN12-UR-000002-MS:  
+  name: Access this computer from the network
+  policy: SeNetworkLogonRight
+  value: Administrators, Authenticated Users
+  type: privilege_rights
+WN12-UR-000003:
+  name: Act as part of the operating system
+  policy: SeTcbPrivilege
+  value: ''
+  type: privilege_rights 
+WN12-UR-000005:     
+  name: Allow log on locally
+  policy: SeInteractiveLogonRight
+  value: Administrators
+  type: privilege_rights
+WN12-UR-000006-MS:
+  name: Allow log on through Remote Desktop Services
+  policy: SeRemoteInteractiveLogonRight
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000007:
+  name: Back up files and directories
+  policy: SeBackupPrivilege
+  value: Administrators
+  type: privilege_rights
+WN12-UR-000009:
+  name: Change the system time
+  policy: SeSystemtimePrivilege
+  value: Administrators, Local Service
+  type: privilege_rights
+WN12-UR-000011:
+  name: Create a pagefile
+  policy: SeCreatePagefilePrivilege
+  value: Administrators
+  type: privilege_rights 
+WN12-UR-000012:
+  name: Create a token object
+  policy: SeCreateTokenPrivilege
+  value: ''
+  type: privilege_rights
+WN12-UR-000013:
+  name: Create global objects
+  policy: SeCreateGlobalPrivilege
+  value: Administrators, Service, Local Service, Network Service
+  type: privilege_rights
+WN12-UR-000014:
+  name: Create permanent shared objects
+  policy: SeCreatePermanentPrivilege
+  value: ''
+  type: privilege_rights   
+WN12-UR-000015:
+  name: Create symbolic links
+  policy: SeCreateSymbolicLinkPrivilege
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000016:
+  name: Debug programs
+  policy: SeDebugPrivilege
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000017-MS:
+  name: Deny access to this computer from the network
+  policy: SeDenyNetworkLogonRight
+  value: Guests
+  type: privilege_rights  
+WN12-UR-000018-MS:
+  name: Deny log on as a batch job
+  policy: SeDenyBatchLogonRight
+  value: Guests
+  type: privilege_rights
+WN12-UR-000019-MS:
+  name: Deny log on as service
+  policy: SeDenyServiceLogonRight
+  value: ''
+  type: privilege_rights 
+WN12-UR-000020-MS:
+  name: Deny log on locally
+  policy: SeDenyInteractiveLogonRight
+  value: Guests
+  type: privilege_rights     
+WN12-UR-000021-MS:
+  name: Deny log on through Remote Desktop Services
+  policy: SeDenyRemoteInteractiveLogonRight
+  value: Guests
+  type: privilege_rights      
+WN12-UR-000022-MS:
+  name: Enable accounts to be trusted for delegation
+  policy: SeEnableDelegationPrivilege
+  value: ''
+  type: privilege_rights   
+WN12-UR-000023:
+  name: Force shutdown from a remote system
+  policy: SeRemoteShutdownPrivilege
+  value: Administrators
+  type: privilege_rights    
+WN12-UR-000024:
+  name: Generate security audits
+  policy: SeAuditPrivilege
+  value: Local Service, Network Service
+  type: privilege_rights
+WN12-UR-000025:
+  name: Impersonate a client after authentication
+  policy: SeImpersonatePrivilege
+  value: Administrators, Service, Local Service, Network Service
+  type: privilege_rights 
+WN12-UR-000027:
+  name: Increase scheduling priority
+  policy: SeIncreaseBasePriorityPrivilege
+  value: Administrators
+  type: privilege_rights 
+WN12-UR-000028:
+  name: Load and unload device drivers
+  policy: SeLoadDriverPrivilege
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000029:
+  name: Lock pages in memory
+  policy: SeLockMemoryPrivilege
+  value: ''
+  type: privilege_rights   
+WN12-UR-000032:
+  name: Manage auditing and security log
+  policy: SeSecurityPrivilege
+  value: Administrators
+  type: privilege_rights      
+WN12-UR-000033:
+  name: Modify an object label
+  policy: SeRelabelPrivilege
+  value: ''
+  type: privilege_rights  
+WN12-UR-000034:
+  name: Modify firmware environment values
+  policy: SeSystemEnvironmentPrivilege
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000035:
+  name: Perform volume maintenance tasks
+  policy: SeManageVolumePrivilege
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000036:
+  name: Profile single process
+  policy: SeProfileSingleProcessPrivilege
+  value: Administrators
+  type: privilege_rights  
+WN12-UR-000037:
+  name: Profile system performance
+  policy: SeSystemProfilePrivilege
+  value: Administrators, NT Service\WdiServiceHost
+  type: privilege_rights        
+WN12-UR-000039:
+  name: Replace a process level token
+  policy: SeAssignPrimaryTokenPrivilege
+  value: Local Service, Network Service
+  type: privilege_rights    
+WN12-UR-000040:
+  name: Restore files and directories
+  policy: SeRestorePrivilege
+  value: Administrators
+  type: privilege_rights      
+WN12-UR-000042:
+  name: Take ownership of files or other objects
+  policy: SeTakeOwnershipPrivilege
+  value: Administrators
+  type: privilege_rights     
